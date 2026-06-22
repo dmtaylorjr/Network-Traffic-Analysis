@@ -1,0 +1,4 @@
+alert icmp any any -> $HOME_NET any (msg:"PING detected on home network"; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET [4444,1337,31337,6667,6666] (msg:"Suspicious port connection detected"; sid:1000002; rev:3;)
+alert http any any -> $HOME_NET any (msg:"HTTP traffic detected"; sid:1000003; rev:1;)
+alert tcp any 7500 -> $HOME_NET any (msg:"Anomalous inbound connection on non-standard port 7500"; sid:1000004; rev:1;)
